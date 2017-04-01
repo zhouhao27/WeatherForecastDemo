@@ -11,6 +11,8 @@ A MVP application which retreive forecast data from https://api.forecast.io/fore
 - iOS 9.0 and above
 - Swift 3
 
+In order to run the app in real device, need to select correct Team in **General** tab for the **WeatherForecastAssessment** target.
+
 ## Installation
 
 > git clone  
