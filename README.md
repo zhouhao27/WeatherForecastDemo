@@ -4,6 +4,11 @@ A MVP application which retreive forecast data from https://api.forecast.io/fore
 
 > Url: `https://api.forecast.io/forecast/{Your API key here}/{latitude}, {longitude}`
 
+## Develop Environment
+
+- Mac OSX 10.12.4
+- Xcode 8.3
+
 ## Installation
 
 > git clone  

@@ -42,6 +42,12 @@
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD7-aH-shO">
+                                        <rect key="frame" x="280" y="42" width="69" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -49,8 +55,10 @@
                                     <constraint firstAttribute="height" constant="168" id="3cs-8C-Prj"/>
                                     <constraint firstItem="UkW-Vp-vHI" firstAttribute="leading" secondItem="kJ7-QL-k9a" secondAttribute="leading" constant="28" id="Gcd-Su-rjO"/>
                                     <constraint firstItem="mje-Wh-nXy" firstAttribute="top" secondItem="UkW-Vp-vHI" secondAttribute="bottom" constant="12" id="QW7-VN-aLX"/>
+                                    <constraint firstAttribute="trailing" secondItem="qD7-aH-shO" secondAttribute="trailing" constant="26" id="VKc-rj-Sqw"/>
                                     <constraint firstItem="mje-Wh-nXy" firstAttribute="leading" secondItem="kJ7-QL-k9a" secondAttribute="leading" constant="28" id="dmI-lQ-uOp"/>
                                     <constraint firstItem="UkW-Vp-vHI" firstAttribute="top" secondItem="LcO-bg-LsA" secondAttribute="bottom" constant="16" id="emF-lg-h8P"/>
+                                    <constraint firstItem="qD7-aH-shO" firstAttribute="top" secondItem="kJ7-QL-k9a" secondAttribute="top" constant="42" id="mQ2-Dj-9B9"/>
                                     <constraint firstItem="LcO-bg-LsA" firstAttribute="top" secondItem="kJ7-QL-k9a" secondAttribute="top" constant="30" id="z1U-mg-cnW"/>
                                 </constraints>
                             </view>
@@ -58,29 +66,48 @@
                                 <rect key="frame" x="0.0" y="168" width="375" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherHourlyCell" textLabel="Z8j-wc-utk" detailTextLabel="0En-eg-xL6" style="IBUITableViewCellStyleSubtitle" id="dZj-lY-8q6">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherHourlyCell" rowHeight="50" id="dZj-lY-8q6" customClass="HourlyDataViewCell" customModule="WeatherForecastAssessment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dZj-lY-8q6" id="m8q-1E-Y4R">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z8j-wc-utk">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-J9-c4k">
+                                                    <rect key="frame" x="8" y="2" width="96" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0En-eg-xL6">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NI-97-8xJ">
+                                                    <rect key="frame" x="11" y="28" width="26" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whu-YG-5Dt">
+                                                    <rect key="frame" x="110" y="2" width="257" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FtJ-J9-c4k" firstAttribute="leading" secondItem="m8q-1E-Y4R" secondAttribute="leading" constant="8" id="0aP-br-611"/>
+                                                <constraint firstItem="9NI-97-8xJ" firstAttribute="top" secondItem="FtJ-J9-c4k" secondAttribute="bottom" constant="2.5" id="2WX-UN-z1g"/>
+                                                <constraint firstAttribute="bottom" secondItem="9NI-97-8xJ" secondAttribute="bottom" constant="0.5" id="3qm-Yd-zu8"/>
+                                                <constraint firstItem="whu-YG-5Dt" firstAttribute="leading" secondItem="FtJ-J9-c4k" secondAttribute="trailing" constant="6" id="E4M-tx-3n2"/>
+                                                <constraint firstItem="whu-YG-5Dt" firstAttribute="top" secondItem="m8q-1E-Y4R" secondAttribute="top" constant="2" id="LUv-G2-BTP"/>
+                                                <constraint firstAttribute="trailing" secondItem="whu-YG-5Dt" secondAttribute="trailing" constant="8" id="OaM-uo-laj"/>
+                                                <constraint firstItem="FtJ-J9-c4k" firstAttribute="top" secondItem="m8q-1E-Y4R" secondAttribute="top" constant="2" id="PAl-dQ-BUL"/>
+                                                <constraint firstItem="9NI-97-8xJ" firstAttribute="leading" secondItem="m8q-1E-Y4R" secondAttribute="leading" constant="11" id="bAo-mK-f7J"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelDate" destination="9NI-97-8xJ" id="lxt-dl-mpL"/>
+                                            <outlet property="labelSummary" destination="whu-YG-5Dt" id="Eje-Vx-ipq"/>
+                                            <outlet property="labelTemperature" destination="FtJ-J9-c4k" id="WbU-fH-bJe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -105,6 +132,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="NCJ-pS-kno" id="IEE-Bc-12d"/>
                         <outlet property="dateLabel" destination="mje-Wh-nXy" id="7Bt-Cr-rdS"/>
+                        <outlet property="humidityLabel" destination="qD7-aH-shO" id="Lcm-HT-UHg"/>
                         <outlet property="summaryLabel" destination="UkW-Vp-vHI" id="m5V-8j-2fx"/>
                         <outlet property="tableView" destination="Sr1-74-Hwf" id="c0Q-p6-BU7"/>
                         <outlet property="temperatureLabel" destination="LcO-bg-LsA" id="4TN-Hh-Gbo"/>

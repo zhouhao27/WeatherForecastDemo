@@ -15,6 +15,7 @@ class ForecastViewController: UIViewController {
     var forecastPresenter: ForecasetPresenter!
     var lastErrorMessage = ""
     
+    @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -27,10 +28,7 @@ class ForecastViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Weather Forecast"
-        
         tableView.dataSource = self
-        
-        //        forecastPresenter = ForecasetPresenter(service: forecastService, view: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +41,7 @@ class ForecastViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDataSource
 extension ForecastViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,21 +49,28 @@ extension ForecastViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherHourlyCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherHourlyCell", for: indexPath) as! HourlyDataViewCell
         let item = weatherHourlyData[indexPath.row]
         if let temperature = item.temperature {
-            cell.textLabel?.text = WeatherData.toCelsius(temperature: temperature)
+            cell.labelTemperature.text = WeatherData.toCelsius(temperature: temperature)
         }
         if let time = item.time {
-            cell.detailTextLabel?.text = time.toDate()
+            cell.labelDate.text = time.toDate()
+        }
+        if let summary = item.summary {
+            cell.labelSummary.text = summary
         }
         return cell
     }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
 }
 
+// MARK: ForecastViewProtocol
 extension ForecastViewController: ForecastViewProtocol {
     
-    // MARK: ForecastViewProtocol implementation
     func showLoading(_ loading: Bool) {
         if loading {
             activityIndicator.startAnimating()
@@ -84,6 +90,9 @@ extension ForecastViewController: ForecastViewProtocol {
             self.temperatureLabel.text = WeatherData.toCelsius(temperature: temperature)
         }
         
+        if let humidity = data.humidity {
+            self.humidityLabel.text = "Humidity: \(humidity)"
+        }
         if let time = data.time {
             self.dateLabel.text = time.toDate()
         }
