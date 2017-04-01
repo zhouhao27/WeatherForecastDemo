@@ -2,13 +2,13 @@
 
 A MVP application which retreive forecast data from https://api.forecast.io/forecast.
 
-Url: https://api.forecast.io/forecast/{Your API key here}/{latitude}, {longitude}
+> Url: https://api.forecast.io/forecast/{Your API key here}/{latitude}, {longitude}
 
 ## Installation
 
-> git clone
-> cd WeatherForecast
-> pod install
+> git clone  
+> cd WeatherForecast  
+> pod install  
 
 ## Dependency
 
