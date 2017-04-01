@@ -8,6 +8,8 @@ A MVP application which retreive forecast data from https://api.forecast.io/fore
 
 - Mac OSX 10.12.4
 - Xcode 8.3
+- iOS 9.0 and above
+- Swift 3
 
 ## Installation
 
@@ -37,11 +39,10 @@ I'm using MVP instead of MVC so that most business logic are moved into Presente
 
 - Model
 
-Test the parsing function.
+Test the Json data parse function (actually this is automatically done by ObjectMapper).
 
 - View Controller (View) 
 
-With some extra efforts, view controller is also testable. Since there are not much UI interactions so that I don't need UI unit testing.
-
+With some extra efforts, view controller is also testable. 
 
 
