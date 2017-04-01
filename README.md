@@ -16,7 +16,7 @@ In order to run the app in real device, need to select correct Team in **General
 ## Installation
 
 > git clone  
-> cd WeatherForecast  
+> cd WeatherForecastDemo  
 > pod install  
 
 ## Dependency
